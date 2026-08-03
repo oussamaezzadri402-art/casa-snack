@@ -1,0 +1,6 @@
+{
+  "name": "Casa Snack",
+  "description": "صفحة هبوط احترافية ومودرن لمطعم الوجبات السريعة Casa Snack بالدارجة المغربية مع إمكانية الطلب المباشر عبر واتساب.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

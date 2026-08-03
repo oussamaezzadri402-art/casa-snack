@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+::-webkit-scrollbar-thumb {
+  background: #f97316;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ea580c;
+}
+
+/* Custom animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(249, 115, 22, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(249, 115, 22, 0.8);
+  }
+}
+
+.glow-orange {
+  animation: pulseGlow 2.5s infinite;
+}
+
+.orange-gradient-text {
+  background: linear-gradient(135deg, #fb923c 0%, #f97316 50%, #c2410c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-radial-glow {
+  background: radial-gradient(circle at center, rgba(249, 115, 22, 0.15) 0%, rgba(0,0,0,0) 70%);
+}
+
+/* Scroll reveal classes */
+.scroll-reveal {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+.scroll-reveal.reveal-up {
+  transform: translateY(40px);
+}
+.scroll-reveal.reveal-down {
+  transform: translateY(-40px);
+}
+.scroll-reveal.reveal-left {
+  transform: translateX(40px);
+}
+.scroll-reveal.reveal-right {
+  transform: translateX(-40px);
+}
+.scroll-reveal.reveal-active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* Hide scrollbar helper */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

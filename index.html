@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casa Snack | كازا سناك - المذاق الرفيع والسرعة فالتوصيل 🍔🔥</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@700;900&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="bg-black text-white antialiased font-['Cairo',_system-ui,_sans-serif] selection:bg-orange-500 selection:text-black">
+
+  <!-- =========================================================================
+       LOADING SCREEN (شاشة التحميل المبدئية)
+       ========================================================================= -->
+  <div id="loading-screen" class="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center gap-4 transition-all duration-500">
+    <div class="relative w-20 h-20">
+      <div class="absolute inset-0 rounded-full border-4 border-zinc-800"></div>
+      <div class="absolute inset-0 rounded-full border-4 border-t-orange-500 animate-spin"></div>
+    </div>
+    <h2 class="text-2xl font-black text-white tracking-widest font-['Tajawal']">Casa <span class="text-orange-500">Snack</span></h2>
+    <p class="text-xs text-zinc-500 font-bold">جاري تحميل البنة المغربية...</p>
+  </div>
+
+  <!-- =========================================================================
+       HEADER & NAVBAR (الشريط العلوي والتنقل)
+       ========================================================================= -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-gradient-to-b from-black/95 via-black/70 to-transparent py-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between gap-2">
+        
+        <!-- Logo & Brand Link -->
+        <a href="#hero" class="flex items-center gap-2.5 group shrink-0">
+          <div class="relative">
+            <img id="header-logo-img" src="/assets/logo/logo.jpg" alt="Casa Snack" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-orange-500 object-cover shadow-lg group-hover:scale-105 transition-transform" referrerpolicy="no-referrer">
+            <span class="absolute -bottom-0.5 -right-0.5 flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+            </span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xl sm:text-2xl font-black tracking-tight text-white flex items-center gap-1 font-['Tajawal']">
+              Casa <span class="text-orange-500">Snack</span>
+            </span>
+            <div class="flex items-center gap-1.5">
+              <span id="working-status-badge" class="text-[10px] font-bold px-1.5 py-0.2 rounded border bg-emerald-500/10 text-emerald-400 border-emerald-500/20">مفتوح الآن 🟢</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Desktop Links -->
+        <nav class="hidden lg:flex items-center gap-5 xl:gap-7">
+          <a href="#hero" class="text-zinc-300 hover:text-orange-400 text-sm font-bold transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:right-0 after:w-0 after:h-0.5 after:bg-orange-500 hover:after:w-full after:transition-all">الرئيسية</a>
+          <a href="#about" class="text-zinc-300 hover:text-orange-400 text-sm font-bold transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:right-0 after:w-0 after:h-0.5 after:bg-orange-500 hover:after:w-full after:transition-all">شكون حنا</a>
+          <a href="#menu" class="text-zinc-300 hover:text-orange-400 text-sm font-bold transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:right-0 after:w-0 after:h-0.5 after:bg-orange-500 hover:after:w-full after:transition-all">المنيو</a>
+          <a href="#why-us" class="text-zinc-300 hover:text-orange-400 text-sm font-bold transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:right-0 after:w-0 after:h-0.5 after:bg-orange-500 hover:after:w-full after:transition-all">علاش Casa Snack؟</a>
+          <a href="#gallery" class="text-zinc-300 hover:text-orange-400 text-sm font-bold transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:right-0 after:w-0 after:h-0.5 after:bg-orange-500 hover:after:w-full after:transition-all">معرض الصور</a>
+          <a href="#reviews" class="text-zinc-300 hover:text-orange-400 text-sm font-bold transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:right-0 after:w-0 after:h-0.5 after:bg-orange-500 hover:after:w-full after:transition-all">آراء الزبناء</a>
+          <a href="#contact" class="text-zinc-300 hover:text-orange-400 text-sm font-bold transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:right-0 after:w-0 after:h-0.5 after:bg-orange-500 hover:after:w-full after:transition-all">التواصل والموقع</a>
+        </nav>
+
+        <!-- Navbar Action Buttons -->
+        <div class="flex items-center gap-2 sm:gap-2.5">
+          
+          <!-- Share Modal Button -->
+          <button class="toggle-share-btn bg-zinc-800 hover:bg-zinc-700 text-orange-400 p-2 sm:px-3 sm:py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-1.5 border border-zinc-700 transition-all active:scale-95 cursor-pointer" title="مشاركة / QR Code">
+            <i class="fa-solid fa-qrcode text-base"></i>
+            <span class="hidden md:inline">QR Code</span>
+          </button>
+
+          <!-- Direct Whatsapp Order -->
+          <a class="whatsapp-order-link hidden sm:inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm px-3.5 py-2 rounded-xl transition-all shadow-md shadow-emerald-950/40 hover:scale-105 active:scale-95">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>طلب سريع</span>
+          </a>
+
+          <!-- Interactive Cart Trigger -->
+          <button class="toggle-cart-btn relative bg-orange-600 hover:bg-orange-500 text-white p-2.5 sm:px-4 sm:py-2 rounded-xl font-bold text-xs sm:text-sm flex items-center gap-2 transition-all shadow-lg shadow-orange-950/50 hover:scale-105 active:scale-95 cursor-pointer" title="سلة الطلبات">
+            <i class="fa-solid fa-cart-shopping text-base"></i>
+            <span class="hidden sm:inline">سلة الطلب</span>
+            <span id="cart-count-badge" class="hidden bg-white text-orange-600 font-extrabold text-xs w-5 h-5 rounded-full flex items-center justify-center shadow">0</span>
+          </button>
+
+          <!-- Code Export Trigger -->
+          <button class="toggle-export-btn bg-zinc-800 hover:bg-zinc-700 text-zinc-300 p-2.5 rounded-xl text-xs sm:text-sm transition-all border border-zinc-700 cursor-pointer" title="تصدير كود HTML الصافي">
+            <i class="fa-solid fa-code text-orange-400"></i>
+          </button>
+
+          <!-- Mobile Toggle -->
+          <button id="mobile-menu-btn" class="lg:hidden text-zinc-300 hover:text-white p-2.5 rounded-xl bg-zinc-900 border border-zinc-800 transition-all cursor-pointer" aria-label="القائمة">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-zinc-950/95 backdrop-blur-xl border-b border-orange-500/20 px-4 pt-4 pb-6 mt-2 shadow-2xl transition-all">
+      <div class="flex flex-col gap-2.5">
+        
+        <div class="bg-zinc-900 border border-zinc-800 p-3 rounded-xl flex items-center justify-between mb-2">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+            <span class="text-xs font-bold text-white">مفتوح الآن 🟢</span>
+          </div>
+          <span class="text-[11px] text-orange-400 font-medium">كنرحبوا بطلباتكم دابا!</span>
+        </div>
+
+        <a href="#hero" class="text-zinc-200 hover:text-orange-400 font-bold text-base py-2.5 px-3 rounded-lg hover:bg-zinc-900/80 transition-all flex items-center justify-between border-r-2 border-transparent hover:border-orange-500">
+          <span>الرئيسية</span>
+          <i class="fa-solid fa-angle-left text-xs text-zinc-500"></i>
+        </a>
+        <a href="#about" class="text-zinc-200 hover:text-orange-400 font-bold text-base py-2.5 px-3 rounded-lg hover:bg-zinc-900/80 transition-all flex items-center justify-between border-r-2 border-transparent hover:border-orange-500">
+          <span>شكون حنا</span>
+          <i class="fa-solid fa-angle-left text-xs text-zinc-500"></i>
+        </a>
+        <a href="#menu" class="text-zinc-200 hover:text-orange-400 font-bold text-base py-2.5 px-3 rounded-lg hover:bg-zinc-900/80 transition-all flex items-center justify-between border-r-2 border-transparent hover:border-orange-500">
+          <span>المنيو</span>
+          <i class="fa-solid fa-angle-left text-xs text-zinc-500"></i>
+        </a>
+        <a href="#why-us" class="text-zinc-200 hover:text-orange-400 font-bold text-base py-2.5 px-3 rounded-lg hover:bg-zinc-900/80 transition-all flex items-center justify-between border-r-2 border-transparent hover:border-orange-500">
+          <span>علاش Casa Snack؟</span>
+          <i class="fa-solid fa-angle-left text-xs text-zinc-500"></i>
+        </a>
+        <a href="#gallery" class="text-zinc-200 hover:text-orange-400 font-bold text-base py-2.5 px-3 rounded-lg hover:bg-zinc-900/80 transition-all flex items-center justify-between border-r-2 border-transparent hover:border-orange-500">
+          <span>معرض الصور</span>
+          <i class="fa-solid fa-angle-left text-xs text-zinc-500"></i>
+        </a>
+        <a href="#reviews" class="text-zinc-200 hover:text-orange-400 font-bold text-base py-2.5 px-3 rounded-lg hover:bg-zinc-900/80 transition-all flex items-center justify-between border-r-2 border-transparent hover:border-orange-500">
+          <span>آراء الزبناء</span>
+          <i class="fa-solid fa-angle-left text-xs text-zinc-500"></i>
+        </a>
+        <a href="#contact" class="text-zinc-200 hover:text-orange-400 font-bold text-base py-2.5 px-3 rounded-lg hover:bg-zinc-900/80 transition-all flex items-center justify-between border-r-2 border-transparent hover:border-orange-500">
+          <span>التواصل والموقع</span>
+          <i class="fa-solid fa-angle-left text-xs text-zinc-500"></i>
+        </a>
+
+        <div class="pt-3 border-t border-zinc-800 flex flex-col gap-2.5">
+          <button class="toggle-share-btn w-full bg-zinc-800 hover:bg-zinc-700 text-orange-400 font-bold py-2.5 rounded-xl flex items-center justify-center gap-2 text-sm border border-zinc-700 cursor-pointer">
+            <i class="fa-solid fa-qrcode"></i>
+            <span>عرض QR Code ومشاركة القائمة</span>
+          </button>
+
+          <a class="whatsapp-order-link w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 transition-all shadow-md">
+            <i class="fa-brands fa-whatsapp text-xl"></i>
+            <span>طلب مباشر عبر واتساب</span>
+          </a>
+
+          <a id="restaurant-phone-link" class="w-full bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-2.5 rounded-xl flex items-center justify-center gap-2 text-sm border border-zinc-700">
+            <i class="fa-solid fa-phone text-orange-400"></i>
+            <span>إتصل بنا: <span id="restaurant-phone-text">0661123456</span></span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       HERO SECTION (القسم الرئيسي للواجهة)
+       ========================================================================= -->
+  <section id="hero" class="relative pt-28 sm:pt-36 pb-16 sm:pb-24 min-h-[90vh] flex items-center overflow-hidden bg-black">
+    
+    <!-- Ambiance Glow -->
+    <div class="absolute top-1/4 right-0 w-96 h-96 bg-orange-600/15 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-10 left-10 w-80 h-80 bg-amber-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(#1c1917_1px,transparent_1px)] [background-size:24px_24px] opacity-30 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        
+        <!-- Text Columns (RTL) -->
+        <div class="lg:col-span-7 text-right space-y-6 sm:space-y-7">
+          
+          <div class="flex flex-wrap items-center gap-2.5">
+            <div class="inline-flex items-center gap-2 bg-orange-500/15 border border-orange-500/40 px-4 py-2 rounded-full text-orange-400 text-xs sm:text-sm font-black shadow-lg shadow-orange-950/40">
+              <span class="flex h-2.5 w-2.5 rounded-full bg-orange-500 animate-ping"></span>
+              <span id="top-badge-text">🔥 أكثر من 15000 طلب ناجح فكازا</span>
+            </div>
+
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold border bg-emerald-500/10 text-emerald-400 border-emerald-500/20">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              <span id="working-status-badge-inner">مفتوح الآن 🟢</span>
+              <span class="opacity-40">|</span>
+              <span id="working-status-countdown" class="text-zinc-300 font-normal">كنسدوا فـ غضون ساعات</span>
+            </div>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.2] tracking-tight">
+            أحسن وجبات سريعة فكازا <br class="hidden sm:inline" />
+            <span class="text-transparent bg-clip-text bg-gradient-to-l from-orange-400 via-orange-500 to-amber-500">
+              بمذاق خطير وتوصيل حار!
+            </span>
+          </h1>
+
+          <p class="text-zinc-300 text-base sm:text-lg lg:text-xl font-medium leading-relaxed max-w-2xl">
+            مرحباً بك فـ <span class="text-orange-400 font-bold">Casa Snack</span>! كنوفروا ليك أحسن تاكوس غراتيني، كازا تشيز برغر، بيتزا رويال وبانيني.. كولشي محضر يومياً بلحوم حلال 100% وبسر الصلصة الفريدة ديالنا.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+            <!-- Pulsing WhatsApp Button -->
+            <a class="whatsapp-order-link relative group bg-emerald-600 hover:bg-emerald-500 text-white text-center font-extrabold text-base sm:text-lg px-8 py-4 rounded-2xl transition-all shadow-xl shadow-emerald-950/60 flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] glow-orange">
+              <i class="fa-brands fa-whatsapp text-2xl group-hover:rotate-12 transition-transform"></i>
+              <span>طلب عبر واتساب</span>
+            </a>
+
+            <a href="#menu" class="bg-zinc-900 hover:bg-zinc-800 text-white text-center font-bold text-base px-7 py-4 rounded-2xl border border-zinc-700 hover:border-orange-500 transition-all flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98]">
+              <i class="fa-solid fa-utensils text-orange-400"></i>
+              <span>شوف المنيو والأسعار</span>
+            </a>
+          </div>
+
+          <!-- Counter Quick Badges -->
+          <div class="pt-6 border-t border-zinc-800/80 grid grid-cols-3 gap-3 sm:gap-4 text-right">
+            <div class="bg-zinc-900/60 p-3 rounded-xl border border-zinc-800/60">
+              <div class="text-orange-400 text-base sm:text-lg font-black mb-1 flex items-center gap-1.5">
+                <i class="fa-solid fa-bolt"></i>
+                <span>25-35 د</span>
+              </div>
+              <div class="text-xs text-zinc-400 font-medium">توصيل سريع فكازا</div>
+            </div>
+
+            <div class="bg-zinc-900/60 p-3 rounded-xl border border-zinc-800/60">
+              <div class="text-orange-400 text-base sm:text-lg font-black mb-1 flex items-center gap-1.5">
+                <i class="fa-solid fa-drumstick-bite"></i>
+                <span>100% حلال</span>
+              </div>
+              <div class="text-xs text-zinc-400 font-medium">لحوم طازجة يومياً</div>
+            </div>
+
+            <div class="bg-zinc-900/60 p-3 rounded-xl border border-zinc-800/60">
+              <div class="text-orange-400 text-base sm:text-lg font-black mb-1 flex items-center gap-1.5">
+                <i class="fa-solid fa-star"></i>
+                <span>4.9 / 5</span>
+              </div>
+              <div class="text-xs text-zinc-400 font-medium">+15000 طلب ناجح</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Hero Media Column -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            
+            <div class="absolute -inset-1 bg-gradient-to-r from-orange-600 via-amber-500 to-orange-500 rounded-3xl blur-xl opacity-40 animate-pulse"></div>
+
+            <div class="relative rounded-3xl overflow-hidden border-2 border-orange-500/40 bg-zinc-900 shadow-2xl">
+              <img id="hero-showcase-img" src="/assets/images/hero.jpg" alt="Casa Snack Tacos and Burger" class="w-full h-[380px] sm:h-[460px] object-cover hover:scale-105 transition-transform duration-700" referrerpolicy="no-referrer">
+              
+              <!-- Dark Overlay (#3) -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/30 opacity-90"></div>
+
+              <div class="absolute inset-0 p-6 flex flex-col justify-between">
+                <div class="flex justify-end">
+                  <span class="bg-orange-500 text-black font-black text-xs px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1.5">
+                    <i class="fa-solid fa-fire"></i>
+                    الأكثر طلباً فكازا
+                  </span>
+                </div>
+
+                <!-- Floating Bottom Card -->
+                <div class="p-4 rounded-2xl bg-zinc-950/90 backdrop-blur-md border border-orange-500/40 flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-11 h-11 rounded-xl bg-orange-500/20 border border-orange-500/40 flex items-center justify-center text-orange-400 font-bold">
+                      <i class="fa-solid fa-burger text-2xl"></i>
+                    </div>
+                    <div class="text-right">
+                      <div class="text-white font-extrabold text-sm sm:text-base">تاكوس سوبريم + كازا تشيز</div>
+                      <div class="text-xs text-orange-400 font-medium">سناك Casa Snack المعاريف</div>
+                    </div>
+                  </div>
+                  <div class="text-left">
+                    <span class="text-[10px] text-zinc-400 block">ابتداءً من</span>
+                    <span class="text-xl font-black text-orange-400">28 DH</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="absolute -top-4 -left-4 bg-orange-500 text-black font-black px-4 py-2 rounded-2xl shadow-xl flex items-center gap-2 transform -rotate-3 text-sm">
+              <i class="fa-solid fa-certificate"></i>
+              <span>جودة Casa Snack 100%</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       ABOUT SECTION (شكون حنا)
+       ========================================================================= -->
+  <section id="about" class="py-20 sm:py-28 bg-zinc-950 relative overflow-hidden border-t border-zinc-900">
+    <div class="absolute top-0 right-1/3 w-72 h-72 bg-orange-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Header -->
+      <div class="scroll-reveal reveal-up text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 px-4 py-1.5 rounded-full text-orange-400 text-xs sm:text-sm font-bold mb-3">
+          <i class="fa-solid fa-store"></i>
+          <span>قصة النجاح والمذاق</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+          شكون حنا فـ <span class="text-orange-500">Casa Snack</span>؟
+        </h2>
+        <p class="mt-4 text-zinc-400 text-base sm:text-lg">
+          سناك مغربي أصيل فقلب الدار البيضاء، تخصصنا هو نقدمو ليك وجبة سريعة بمذاق الفنادق الفخمة!
+        </p>
+      </div>
+
+      <!-- Grid Content -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Photo Prep -->
+        <div class="lg:col-span-6 relative">
+          <div class="scroll-reveal reveal-right rounded-3xl overflow-hidden border border-zinc-800 shadow-2xl group">
+            <img id="about-kitchen-img" src="/assets/images/about_kitchen.jpg" alt="Casa Snack Kitchen Preparation" class="w-full h-[380px] sm:h-[450px] object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+
+            <div class="absolute bottom-6 right-6 left-6 bg-black/80 backdrop-blur-md p-5 rounded-2xl border border-zinc-800 text-right">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-orange-500 flex items-center justify-center text-black font-extrabold text-2xl shrink-0">
+                  <i class="fa-solid fa-utensils"></i>
+                </div>
+                <div>
+                  <h4 class="text-white font-bold text-base sm:text-lg">مطبخ حديث ومكشوف</h4>
+                  <p class="text-zinc-400 text-xs sm:text-sm">تحضير فوري أمام عينيك بعناية ونظافة تامة.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Narrative -->
+        <div class="lg:col-span-6 space-y-6 text-right">
+          <div class="scroll-reveal reveal-left space-y-4 text-zinc-300 leading-relaxed text-base sm:text-lg">
+            <p>
+              بدات القصة د <strong class="text-white">Casa Snack</strong> من الشغف ديالنا لتقديم أفضل الوجبات السريعة للبيضاويين. كنامنو بأن السر فالوجبة البنينة كيبدا من المكونات الطرية والسرية.
+            </p>
+            <p>
+              كل يوم فـ Casa Snack، كنختارو أجود اللحوم الحلال 100% من الجزارين الموثوقين، وكنعجنوا الخبز والبيتزا طازجة، مع تحضير صلصة الجبن المذابة (La Sauce Fromagère) الخاصة بفرنسا والمغرب اللي خلات الزبناء ديالنا يعشقوا التاكوس والبرغر ديالنا.
+            </p>
+          </div>
+
+          <!-- Points list -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+            
+            <div class="scroll-reveal reveal-up bg-zinc-900/80 p-4 rounded-2xl border border-zinc-800/80 flex items-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 shrink-0 mt-0.5">
+                <i class="fa-solid fa-check text-base"></i>
+              </div>
+              <div>
+                <h4 class="text-white font-bold text-sm">لحوم بلدية طازجة</h4>
+                <p class="text-zinc-400 text-xs mt-1">كفتة، دجاج وكوردون بلو طري 100%.</p>
+              </div>
+            </div>
+
+            <div class="scroll-reveal reveal-up bg-zinc-900/80 p-4 rounded-2xl border border-zinc-800/80 flex items-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 shrink-0 mt-0.5">
+                <i class="fa-solid fa-pepper-hot text-base"></i>
+              </div>
+              <div>
+                <h4 class="text-white font-bold text-sm">صلصات أصلية متنوعة</h4>
+                <p class="text-zinc-400 text-xs mt-1">جزائرية، أندالوز، ساموراي ولاصوص فرومادج.</p>
+              </div>
+            </div>
+
+            <div class="scroll-reveal reveal-up bg-zinc-900/80 p-4 rounded-2xl border border-zinc-800/80 flex items-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 shrink-0 mt-0.5">
+                <i class="fa-solid fa-motorcycle text-base"></i>
+              </div>
+              <div>
+                <h4 class="text-white font-bold text-sm">توصيل حار وسريع</h4>
+                <p class="text-zinc-400 text-xs mt-1">أجهزة حرارية كتحافظ على الوجبة سخونة.</p>
+              </div>
+            </div>
+
+            <div class="scroll-reveal reveal-up bg-zinc-900/80 p-4 rounded-2xl border border-zinc-800/80 flex items-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 shrink-0 mt-0.5">
+                <i class="fa-solid fa-coins text-base"></i>
+              </div>
+              <div>
+                <h4 class="text-white font-bold text-sm">أسعار مناسبة للجميع</h4>
+                <p class="text-zinc-400 text-xs mt-1">شبعة حقيقية بأجود الأسعار بالدرهم.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       MENU SECTION (قسم المنيو والوجبات التفاعلي)
+       ========================================================================= -->
+  <section id="menu" class="py-20 sm:py-28 bg-black relative border-t border-zinc-900">
+    <div class="absolute top-1/4 left-0 w-96 h-96 bg-orange-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Header -->
+      <div class="scroll-reveal reveal-up text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 px-4 py-1.5 rounded-full text-orange-400 text-xs sm:text-sm font-bold mb-3">
+          <i class="fa-solid fa-utensils"></i>
+          <span>قائمة المأكولات اللذيذة</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+          اختار وجبتك المفضلة من المنيو
+        </h2>
+        <p class="mt-4 text-zinc-400 text-base sm:text-lg">
+          سواء كنتي باغي تاكوس غراتيني معمر، برغر ضخم كيسيل بالفرماج، أو بيتزا سخونة.. كولشي كاين هنا!
+        </p>
+      </div>
+
+      <!-- Live Search & Filtering Module -->
+      <div class="scroll-reveal reveal-up max-w-4xl mx-auto mb-12 space-y-6">
+        <!-- Live Search Input -->
+        <div class="relative">
+          <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none text-zinc-500">
+            <i class="fa-solid fa-magnifying-glass text-lg"></i>
+          </div>
+          <input id="search-input" type="text" placeholder="قلب على وجبتك المفضلة (تاكوس، برغر، بيتزا، مشروب...)" class="w-full bg-zinc-900/90 text-white rounded-2xl pr-12 pl-4 py-4 border border-zinc-800 focus:border-orange-500 focus:outline-none transition-colors text-right text-sm sm:text-base font-bold shadow-lg">
+        </div>
+
+        <!-- Category Tabs -->
+        <div id="categories-container" class="flex items-center gap-2.5 overflow-x-auto scrollbar-none pb-2 select-none dir-rtl">
+          <!-- Dyn Hydrated Categories -->
+        </div>
+      </div>
+
+      <!-- Menu Items Grid -->
+      <div id="menu-items-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <!-- Dyn Hydrated Items -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       WHY CHOOSE US (علاش تختارنا والمميزات)
+       ========================================================================= -->
+  <section id="why-us" class="py-20 sm:py-28 bg-zinc-950 relative overflow-hidden border-t border-zinc-900">
+    <div class="absolute top-1/2 left-0 w-96 h-96 bg-orange-600/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Title -->
+      <div class="scroll-reveal reveal-up text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 px-4 py-1.5 rounded-full text-orange-400 text-xs sm:text-sm font-bold mb-3">
+          <i class="fa-solid fa-award"></i>
+          <span>الامتياز والتفوق</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+          علاش تختار <span class="text-orange-500">Casa Snack</span>؟
+        </h2>
+        <p class="mt-4 text-zinc-400 text-base sm:text-lg">
+          من الجودة د المكونات حتال سرعة التوصيل.. كنضمنوا ليك تجربة أكل سريعة ما تنساش!
+        </p>
+      </div>
+
+      <!-- Features Grid -->
+      <div id="features-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <!-- Dyn Hydrated Features -->
+      </div>
+
+      <!-- Counter Bar (Banner) -->
+      <div class="scroll-reveal reveal-up mt-16 bg-gradient-to-r from-orange-600 via-amber-600 to-orange-500 p-8 sm:p-10 rounded-3xl text-black shadow-2xl grid grid-cols-2 lg:grid-cols-4 gap-8 text-center font-['Tajawal']">
+        <div>
+          <div class="text-3xl sm:text-4xl font-black mb-1">+15,000</div>
+          <div class="text-xs sm:text-sm font-bold text-black/80">وجبة مباعة فكازا</div>
+        </div>
+
+        <div>
+          <div class="text-3xl sm:text-4xl font-black mb-1">25 دقيقة</div>
+          <div class="text-xs sm:text-sm font-bold text-black/80">متوسط وقت التوصيل</div>
+        </div>
+
+        <div>
+          <div class="text-3xl sm:text-4xl font-black mb-1">100%</div>
+          <div class="text-xs sm:text-sm font-bold text-black/80">لحوم حلال وطازجة</div>
+        </div>
+
+        <div>
+          <div class="text-3xl sm:text-4xl font-black mb-1">4.9 / 5</div>
+          <div class="text-xs sm:text-sm font-bold text-black/80">رضا الزبناء على واتساب</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       PHOTO GALLERY (معرض صور الوجبات والأجواء)
+       ========================================================================= -->
+  <section id="gallery" class="py-20 sm:py-28 bg-black relative border-t border-zinc-900">
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="scroll-reveal reveal-up text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 px-4 py-1.5 rounded-full text-orange-400 text-xs sm:text-sm font-bold mb-3">
+          <i class="fa-solid fa-camera"></i>
+          <span>جولة بصرية سريعة</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+          معرض صور وجبات <span class="text-orange-500">Casa Snack</span>
+        </h2>
+        <p class="mt-4 text-zinc-400 text-base sm:text-lg">
+          شوف البنة بعينيك! صور حقيقية للوجبات اللي كنحضروا في مطابخنا بكل حب واحترافية.
+        </p>
+      </div>
+
+      <!-- Photo Grid -->
+      <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Dyn Hydrated Photos -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       REVIEWS SECTION (آراء الزبناء الكرام)
+       ========================================================================= -->
+  <section id="reviews" class="py-20 sm:py-28 bg-zinc-950 relative border-t border-zinc-900">
+    <div class="absolute top-1/3 right-1/4 w-80 h-80 bg-orange-600/10 rounded-full blur-[110px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Header with Action Button -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-16 text-right">
+        <div class="max-w-2xl">
+          <div class="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 px-4 py-1.5 rounded-full text-orange-400 text-xs sm:text-sm font-bold mb-3">
+            <i class="fa-solid fa-comments"></i>
+            <span>آراء ومحبة زبنائنا</span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+            شنو كيقولوا الناس على <span class="text-orange-500">Casa Snack</span>؟
+          </h2>
+          <p class="mt-4 text-zinc-400 text-sm sm:text-base">
+            فخورين بأكثر من 15,000 زبون راضٍ فـ كازا. هادو بعض من شهاداتهم الحقيقية والجميلة.
+          </p>
+        </div>
+
+        <button id="show-review-form-btn" class="bg-orange-500 hover:bg-orange-400 text-black font-extrabold text-sm px-6 py-3.5 rounded-2xl transition-all active:scale-95 flex items-center gap-2 shadow-lg shadow-orange-500/20 cursor-pointer">
+          <i class="fa-solid fa-pen-to-square"></i>
+          <span>شاركنا برأيك فالمطعم</span>
+        </button>
+      </div>
+
+      <!-- New Review Form Collapse container -->
+      <div id="review-form-container" class="hidden max-w-xl mx-auto bg-zinc-900 border border-orange-500/30 p-6 rounded-3xl shadow-2xl mb-12 animate-fadeIn text-right space-y-4">
+        <h3 class="text-lg font-black text-white mb-2">رأيك كيهمنا بزااف! ❤️</h3>
+        
+        <form id="add-review-form" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="text-xs text-zinc-400 font-bold block mb-1">الاسم الكامل *</label>
+              <input type="text" id="new-review-name" required placeholder="مثال: أمين السبتي" class="w-full bg-zinc-950 text-white text-sm rounded-xl px-3.5 py-2.5 border border-zinc-800 focus:border-orange-500 focus:outline-none">
+            </div>
+            <div>
+              <label class="text-xs text-zinc-400 font-bold block mb-1">الحي / المنطقة فكازا</label>
+              <input type="text" id="new-review-location" placeholder="مثال: سيدي معروف" class="w-full bg-zinc-950 text-white text-sm rounded-xl px-3.5 py-2.5 border border-zinc-800 focus:border-orange-500 focus:outline-none">
+            </div>
+          </div>
+
+          <div>
+            <label class="text-xs text-zinc-400 font-bold block mb-1">التقييم (عدد النجوم) *</label>
+            <select id="new-review-rating" class="w-full bg-zinc-950 text-white text-sm rounded-xl px-3.5 py-2.5 border border-zinc-800 focus:border-orange-500 focus:outline-none font-bold">
+              <option value="5" selected>⭐⭐⭐⭐⭐ (ممتاز جداً)</option>
+              <option value="4">⭐⭐⭐⭐ (جيد جداً)</option>
+              <option value="3">⭐⭐⭐ (متوسط)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="text-xs text-zinc-400 font-bold block mb-1">رأيك وتعليقك بكل صراحة *</label>
+            <textarea id="new-review-comment" required rows="3" placeholder="اكتب لينا شنو عجبك فـ Casa Snack (التاكوس، الخدمة، التوصيل...)" class="w-full bg-zinc-950 text-white text-sm rounded-xl px-3.5 py-2.5 border border-zinc-800 focus:border-orange-500 focus:outline-none"></textarea>
+          </div>
+
+          <div class="flex gap-3 pt-2">
+            <button type="submit" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl transition-all cursor-pointer">صيفط التقييم</button>
+            <button type="button" id="cancel-review-btn" class="flex-1 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 font-bold py-3 rounded-xl transition-all cursor-pointer">إلغاء</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Reviews Grid -->
+      <div id="reviews-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <!-- Dyn Hydrated Reviews -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       CONTACT SECTION (معلومات الاتصال والموقع)
+       ========================================================================= -->
+  <section id="contact" class="py-20 sm:py-28 bg-black relative border-t border-zinc-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Header -->
+      <div class="scroll-reveal reveal-up text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 px-4 py-1.5 rounded-full text-orange-400 text-xs sm:text-sm font-bold mb-3">
+          <i class="fa-solid fa-phone"></i>
+          <span>معلومات الاتصال والموقع</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+          تواصل معانا فـ <span class="text-orange-500">Casa Snack</span>
+        </h2>
+        <p class="mt-4 text-zinc-400 text-base sm:text-lg">
+          نحن هنا لخدمتك! تواصل معانا عبر الهاتف، الواتساب أو زورنا فالمحل فكازابلانكا.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Info Cards -->
+        <div class="lg:col-span-5 space-y-4 text-right">
+          
+          <!-- Real-time Status -->
+          <div class="scroll-reveal reveal-right bg-zinc-900/90 border border-zinc-800 p-6 rounded-3xl shadow-xl">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-orange-500/10 border border-orange-500/30 text-orange-400 flex items-center justify-center text-2xl shrink-0">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center justify-between mb-1">
+                  <h3 class="text-white font-extrabold text-lg">أوقات العمل اليومية</h3>
+                  <span id="working-status-badge-contact" class="text-xs font-bold px-2.5 py-1 rounded-full border bg-emerald-500/10 text-emerald-400 border-emerald-500/20">مفتوح الآن 🟢</span>
+                </div>
+                <p id="working-hours-text" class="text-zinc-300 font-medium text-sm">كل يوم: من 11:30 صباحاً حتال 02:00 دالليل</p>
+                <div id="working-status-countdown-contact" class="mt-2 text-xs text-orange-400 font-bold bg-orange-500/10 border border-orange-500/20 px-3 py-1.5 rounded-xl inline-block">
+                  <i class="fa-solid fa-hourglass-half ml-1.5"></i>
+                  جاري حساب الساعات...
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- WhatsApp Chat -->
+          <div class="scroll-reveal reveal-right">
+            <a class="whatsapp-order-link bg-emerald-950/40 border border-emerald-500/40 hover:border-emerald-500 p-6 rounded-3xl block transition-all hover:scale-[1.01] shadow-xl group cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="w-14 h-14 rounded-2xl bg-emerald-600 text-white flex items-center justify-center text-3xl shrink-0 shadow-lg shadow-emerald-900/50 group-hover:scale-110 transition-transform">
+                  <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div>
+                  <h3 class="text-white font-extrabold text-lg sm:text-xl text-right">تواصل مباشر عبر الواتساب</h3>
+                  <p class="text-emerald-400 font-bold text-sm mt-0.5">انقر هنا للدردشة المباشرة والطلب</p>
+                  <span class="text-xs text-zinc-400 block mt-1">متواجدون للرد السريع طيلة ساعات العمل</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Phone order -->
+          <div class="scroll-reveal reveal-right">
+            <a id="restaurant-phone-link-contact" class="bg-zinc-900/90 border border-zinc-800 hover:border-orange-500/50 p-6 rounded-3xl block transition-all hover:scale-[1.01] shadow-xl group cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="w-14 h-14 rounded-2xl bg-orange-500/10 border border-orange-500/30 text-orange-400 flex items-center justify-center text-2xl shrink-0 group-hover:bg-orange-500 group-hover:text-black transition-colors">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div>
+                  <h3 class="text-white font-extrabold text-lg">رقم الهاتف للطلب المباشر</h3>
+                  <span id="restaurant-phone-text-contact" class="text-orange-400 font-black text-xl dir-ltr block mt-0.5">0661123456</span>
+                  <span class="text-xs text-zinc-400 block mt-1">انقر للاتصال مباشرة من هاتفك</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Address Maps -->
+          <div class="scroll-reveal reveal-right bg-zinc-900/90 border border-zinc-800 p-6 rounded-3xl shadow-xl space-y-4">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-orange-500/10 border border-orange-500/30 text-orange-400 flex items-center justify-center text-2xl shrink-0">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <h3 class="text-white font-extrabold text-lg">عنوان المحل</h3>
+                <p id="restaurant-address" class="text-zinc-300 font-medium text-sm mt-0.5">شارع المسيرة الخضراء، المعاريف، الدار البيضاء</p>
+                <span id="restaurant-city" class="text-xs text-zinc-500 font-bold block mt-0.5">الدار البيضاء (كازابلانكا)</span>
+              </div>
+            </div>
+
+            <a class="maps-direct-link w-full bg-orange-500 hover:bg-orange-400 text-black font-extrabold py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-sm shadow-lg shadow-orange-500/20 transition-all active:scale-95 cursor-pointer">
+              <i class="fa-solid fa-map-location-dot text-base"></i>
+              <span>فتح في Google Maps</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Maps Embed -->
+        <div class="lg:col-span-7 h-full min-h-[460px] rounded-3xl overflow-hidden border border-zinc-800 relative bg-zinc-900 shadow-2xl flex flex-col justify-between">
+          <div class="scroll-reveal reveal-left h-full w-full">
+            <iframe id="maps-iframe" title="Casa Snack Location Map Casablanca" src="about:blank" class="w-full h-[460px] filter contrast-125 saturate-150 grayscale-20 invert opacity-90" style="border: 0" allowfullscreen="false" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            <!-- Floating Top Badge -->
+            <div class="absolute top-4 right-4 bg-black/90 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-orange-500/40 text-white font-bold text-xs flex items-center gap-2 shadow-xl">
+              <i class="fa-solid fa-map-pin text-orange-500 text-base"></i>
+              <span class="r-name">Casa Snack</span><span> - المعاريف، كازا</span>
+            </div>
+
+            <!-- Floating Bottom Info -->
+            <div class="absolute bottom-4 left-4 right-4 bg-black/85 backdrop-blur-md p-3 rounded-2xl border border-zinc-800 flex items-center justify-between">
+              <span class="text-xs text-zinc-300 font-medium">شارع المسيرة، الدار البيضاء</span>
+              <a class="maps-direct-link bg-orange-500 hover:bg-orange-400 text-black text-xs font-bold px-3 py-1.5 rounded-xl transition-all cursor-pointer">الاتجاهات 🧭</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       FOOTER (أسفل الصفحة)
+       ========================================================================= -->
+  <footer class="bg-zinc-950 border-t border-zinc-900 text-zinc-400 pt-16 pb-12 relative overflow-hidden text-right">
+    <div class="absolute bottom-0 right-1/2 translate-x-1/2 w-96 h-32 bg-orange-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-zinc-900">
+        
+        <!-- Col 1: Brand -->
+        <div class="lg:col-span-5 space-y-4">
+          <a href="#hero" class="flex items-center gap-3">
+            <img id="footer-logo-img" src="/assets/logo/logo.jpg" alt="Casa Snack Logo" class="w-12 h-12 rounded-full border-2 border-orange-500 object-cover" referrerpolicy="no-referrer">
+            <span class="text-2xl font-black text-white font-['Tajawal']">
+              Casa <span class="text-orange-500">Snack</span>
+            </span>
+          </a>
+
+          <p class="text-sm text-zinc-400 leading-relaxed max-w-sm">
+            أحسن وجبات سريعة فالمغرب! تاكوس، برغر، بيتزا وبانيني بلحوم طازجة حلال 100% ولاصوص فرومادج الفريدة. التوصيل السريع فجميع أحياء الدار البيضاء.
+          </p>
+
+          <!-- Social links -->
+          <div class="flex items-center gap-3 pt-2">
+            <a class="whatsapp-order-link w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 text-emerald-400 flex items-center justify-center hover:bg-emerald-600 hover:text-white transition-colors cursor-pointer" aria-label="واتساب"><i class="fa-brands fa-whatsapp text-lg"></i></a>
+            <a id="social-instagram" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 text-orange-400 flex items-center justify-center hover:bg-orange-500 hover:text-black transition-colors cursor-pointer" aria-label="انستغرام"><i class="fa-brands fa-instagram text-lg"></i></a>
+            <a id="social-facebook" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 text-blue-400 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors cursor-pointer" aria-label="فيسبوك"><i class="fa-brands fa-facebook-f text-lg"></i></a>
+            <a id="social-tiktok" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 text-pink-400 flex items-center justify-center hover:bg-pink-600 hover:text-white transition-colors cursor-pointer" aria-label="تيك توك"><i class="fa-brands fa-tiktok text-lg"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation links -->
+        <div class="lg:col-span-3 space-y-3">
+          <h4 class="text-white font-extrabold text-base">روابط سريعة</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#hero" class="hover:text-orange-400 transition-colors">الرئيسية</a></li>
+            <li><a href="#about" class="hover:text-orange-400 transition-colors">شكون حنا</a></li>
+            <li><a href="#menu" class="hover:text-orange-400 transition-colors">قائمة المنيو</a></li>
+            <li><a href="#why-us" class="hover:text-orange-400 transition-colors">علاش تختارنا</a></li>
+            <li><a href="#gallery" class="hover:text-orange-400 transition-colors">معرض الصور</a></li>
+            <li><a href="#contact" class="hover:text-orange-400 transition-colors">تواصل معانا</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Delivery Info -->
+        <div class="lg:col-span-4 space-y-3">
+          <h4 class="text-white font-extrabold text-base">الطلب السريع</h4>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            طلبك كيوصلك سخون فـ 25 - 35 دقيقة فكازا! اتصل بنا مباشرة أو صيفط طلبك فالواتساب.
+          </p>
+          <div class="pt-2">
+            <a id="restaurant-phone-link-footer" class="inline-flex items-center gap-2 text-orange-400 font-extrabold text-base hover:underline cursor-pointer">
+              <i class="fa-solid fa-headset"></i>
+              <span>مصلحة الطلبات: <span id="restaurant-phone-text-footer">0661123456</span></span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyrights & Top scroll -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+        <div>
+          © 2026 Casa Snack - جميع الحقوق محفوظة.
+        </div>
+
+        <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="bg-zinc-900 hover:bg-orange-500 hover:text-black text-zinc-300 px-4 py-2 rounded-xl border border-zinc-800 transition-all flex items-center gap-2 cursor-pointer font-bold">
+          <span>إلى الأعلى</span>
+          <i class="fa-solid fa-arrow-up text-xs"></i>
+        </button>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       CART DRAWER BACKDROP (سلة المشتريات المنسدلة)
+       ========================================================================= -->
+  <div id="cart-drawer-backdrop" class="hidden fixed inset-0 z-[60] items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn dir-rtl">
+    <div class="bg-zinc-900 border border-orange-500/30 rounded-3xl w-full max-w-2xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl">
+      
+      <!-- Drawer Header -->
+      <div class="p-5 bg-zinc-950 border-b border-zinc-800 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-orange-500 flex items-center justify-center text-black font-extrabold text-xl">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div class="text-right">
+            <h3 class="text-xl font-black text-white">سلة الطلبات - Casa Snack</h3>
+            <p class="text-xs text-zinc-400">تأكيد طلبك وتجهيز التوصيل السريع</p>
+          </div>
+        </div>
+
+        <button id="close-cart-btn" class="w-9 h-9 rounded-xl bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 flex items-center justify-center transition-all cursor-pointer">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <!-- Scrollable body content -->
+      <div class="p-5 overflow-y-auto space-y-6 flex-1 text-right">
+        <div id="cart-drawer-items" class="space-y-4">
+          <!-- Dynamically Hydrated Cart Items list -->
+        </div>
+
+        <!-- Customer delivery form details -->
+        <div id="cart-drawer-footer" class="hidden space-y-4 pt-4 border-t border-zinc-800">
+          <form id="cart-delivery-form" class="space-y-4">
+            <h4 class="text-white font-bold text-sm flex items-center gap-2">
+              <i class="fa-solid fa-location-dot text-orange-400"></i>
+              <span>معلومات التوصيل</span>
+            </h4>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="text-xs text-zinc-400 font-bold block mb-1">الاسم الكامل *</label>
+                <input type="text" id="delivery-name" required placeholder="مثال: ياسين العمراني" class="w-full bg-zinc-950 text-white text-sm rounded-xl px-3.5 py-2.5 border border-zinc-800 focus:border-orange-500 focus:outline-none">
+              </div>
+
+              <div>
+                <label class="text-xs text-zinc-400 font-bold block mb-1">رقم الهاتف *</label>
+                <input type="tel" id="delivery-phone" required placeholder="مثال: 0612345678" class="w-full bg-zinc-950 text-white text-sm rounded-xl px-3.5 py-2.5 border border-zinc-800 focus:border-orange-500 focus:outline-none">
+              </div>
+            </div>
+
+            <div>
+              <label class="text-xs text-zinc-400 font-bold block mb-1">العنوان / الحي فكازا *</label>
+              <input type="text" id="delivery-address" required placeholder="مثال: شارع المسيرة، زاوية زنقة 4، المعاريف" class="w-full bg-zinc-950 text-white text-sm rounded-xl px-3.5 py-2.5 border border-zinc-800 focus:border-orange-500 focus:outline-none">
+            </div>
+
+            <div>
+              <label class="text-xs text-zinc-400 font-bold block mb-1">ملاحظات إضافية (اختياري)</label>
+              <input type="text" id="delivery-notes" placeholder="مثال: كثروا لاصوص فرومادج / كوكا باردة..." class="w-full bg-zinc-950 text-white text-sm rounded-xl px-3.5 py-2.5 border border-zinc-800 focus:border-orange-500 focus:outline-none">
+            </div>
+
+            <!-- Total and Submit button -->
+            <div class="pt-4 border-t border-zinc-800 space-y-3">
+              <div class="flex items-center justify-between text-lg font-black text-white">
+                <span>المجموع الإجمالي:</span>
+                <span id="cart-total-price" class="text-2xl text-orange-400">0 DH</span>
+              </div>
+
+              <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-base py-4 rounded-2xl transition-all shadow-xl shadow-emerald-950/60 flex items-center justify-center gap-3 cursor-pointer">
+                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                <span>تأكيد وإرسال الطلب عبر الواتساب</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       SHARE AND QR CODE MODAL BACKDROP (مشاركة التطبيق)
+       ========================================================================= -->
+  <div id="share-modal-backdrop" class="hidden fixed inset-0 z-[60] items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn dir-rtl">
+    <div class="bg-zinc-900 border border-orange-500/30 rounded-3xl w-full max-w-md overflow-hidden shadow-2xl p-6 text-right space-y-5">
+      
+      <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
+        <h3 class="text-xl font-black text-white flex items-center gap-2">
+          <i class="fa-solid fa-qrcode text-orange-500"></i>
+          <span>مشاركة قائمة الطعام والـ QR</span>
+        </h3>
+        <button id="close-share-btn" class="text-zinc-400 hover:text-white cursor-pointer">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <!-- Mock QR code drawing using elegant HTML / visual representation -->
+      <div class="flex flex-col items-center justify-center bg-white p-6 rounded-3xl max-w-[240px] mx-auto border-4 border-orange-500 shadow-xl">
+        <!-- SVG mockup QR Code for Casa Snack -->
+        <svg class="w-44 h-44" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" fill="white"/>
+          <path d="M5 5h25v25H5V5zm4 4v17h17V9H9z" fill="black"/>
+          <path d="M13 13h9v9h-9v-9z" fill="#f97316"/>
+          <path d="M70 5h25v25H70V5zm4 4v17h17V9H74z" fill="black"/>
+          <path d="M78 13h9v9h-9v-9z" fill="#f97316"/>
+          <path d="M5 70h25v25H5V70zm4 4v17h17V74H9z" fill="black"/>
+          <path d="M13 78h9v9h-9v-9z" fill="#f97316"/>
+          <!-- random dots -->
+          <rect x="40" y="5" width="8" height="8" fill="black"/>
+          <rect x="52" y="12" width="12" height="6" fill="black"/>
+          <rect x="44" y="24" width="10" height="8" fill="#f97316"/>
+          <rect x="35" y="40" width="15" height="15" fill="black"/>
+          <rect x="55" y="45" width="20" height="10" fill="black"/>
+          <rect x="45" y="75" width="12" height="12" fill="black"/>
+          <rect x="65" y="70" width="8" height="20" fill="#f97316"/>
+          <rect x="80" y="55" width="15" height="15" fill="black"/>
+          <rect x="85" y="80" width="10" height="10" fill="black"/>
+          <!-- Center brand icon logo -->
+          <circle cx="50" cy="50" r="10" fill="black"/>
+          <circle cx="50" cy="50" r="8" fill="#f97316"/>
+          <path d="M48 48h4v4h-4z" fill="white"/>
+        </svg>
+        <span class="text-black font-black text-xs mt-3 select-none">سناك Casa Snack المعاريف</span>
+      </div>
+
+      <p class="text-zinc-300 text-sm leading-relaxed text-center">
+        صوّر الـ QR Code بكاميرا الهاتف ديالك باش تفتح قائمة المأكولات التفاعلية فوراً على تليفونك وتطلب بالزربة!
+      </p>
+
+      <button id="copy-link-btn" class="w-full bg-orange-500 hover:bg-orange-400 text-black font-extrabold py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-orange-500/20">
+        <i class="fa-solid fa-link"></i>
+        <span>نسخ رابط الصفحة لمشاركته مع أصدقائك</span>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       EXPORT HTML MODAL BACKDROP (كود التصدير للـ HTML الصافي)
+       ========================================================================= -->
+  <div id="export-modal-backdrop" class="hidden fixed inset-0 z-[60] items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn dir-rtl">
+    <div class="bg-zinc-900 border border-orange-500/30 rounded-3xl w-full max-w-2xl overflow-hidden shadow-2xl p-6 text-right space-y-4">
+      
+      <div class="flex items-center justify-between border-b border-zinc-800 pb-4">
+        <h3 class="text-xl font-black text-white flex items-center gap-2">
+          <i class="fa-solid fa-code text-orange-500"></i>
+          <span>ملف HTML جاهز للنشر المباشر</span>
+        </h3>
+        <button id="close-export-btn" class="text-zinc-400 hover:text-white cursor-pointer">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <p class="text-zinc-300 text-sm leading-relaxed">
+        يمكنك استخدام هذا التطبيق التفاعلي بالكامل، أو تحميل كود HTML المدمج لرفعه فوراً على منصة Netlify أو أي استضافة أخرى!
+      </p>
+
+      <div class="relative bg-zinc-950 p-4 rounded-2xl border border-zinc-800 max-h-60 overflow-y-auto text-left font-mono text-xs text-orange-300 dir-ltr">
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ar" dir="rtl" class="scroll-smooth"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Casa Snack | كازا سناك&lt;/title&gt;
+  &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body class="bg-black text-white"&gt;
+  ...
+&lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+      </div>
+
+      <div class="flex gap-3 pt-2">
+        <button id="copy-html-btn" class="flex-1 bg-orange-500 hover:bg-orange-400 text-black font-extrabold py-3 rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer">
+          <i class="fa-solid fa-copy"></i>
+          <span>نسخ كود HTML</span>
+        </button>
+
+        <button id="download-html-btn" class="flex-1 bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer">
+          <i class="fa-solid fa-download"></i>
+          <span>تحميل index.html</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       PHOTO LIGHTBOX BACKDROP (نافذة تكبير الصور)
+       ========================================================================= -->
+  <div id="lightbox-backdrop" class="hidden fixed inset-0 z-[70] bg-black/95 items-center justify-center p-4">
+    <button id="close-lightbox-btn" class="absolute top-6 right-6 w-12 h-12 rounded-full bg-zinc-900/80 hover:bg-zinc-800 text-white flex items-center justify-center transition-all border border-zinc-800 cursor-pointer" title="إغلاق">
+      <i class="fa-solid fa-xmark text-xl"></i>
+    </button>
+    <div class="max-w-4xl max-h-[85vh] overflow-hidden rounded-3xl border border-zinc-800 shadow-2xl relative">
+      <img id="lightbox-image" src="about:blank" alt="Large View" class="w-full h-full object-contain">
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       WHATSAPP FLOATING BUTTON (زر الواتساب العائم في أسفل يمين الشاشة)
+       ========================================================================= -->
+  <a class="whatsapp-order-link fixed bottom-5 right-5 z-40 w-12 h-12 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all glow-orange" title="اطلب عبر واتساب">
+    <i class="fa-brands fa-whatsapp text-2xl"></i>
+  </a>
+
+  <!-- JS Interactions Engine -->
+  <script type="module" src="/script.js"></script>
+</body>
+</html>
